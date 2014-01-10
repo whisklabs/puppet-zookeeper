@@ -1,0 +1,7 @@
+# environment file
+
+NAME=zookeeper
+ZOO_LOG_DIR=<%= scope.lookupvar('zookeeper::params::log_dir') %>
+USER=<%= scope.lookupvar('zookeeper::params::user') %>
+GROUP=<%= scope.lookupvar('zookeeper::params::group') %>
+ZOO_LOG4J_PROP="<%= scope.lookupvar('zookeeper::params::log4j_prop') %>"
