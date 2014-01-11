@@ -1,16 +1,21 @@
-zookeeper
+#puppet-zookeeper
 
-This is the zookeeper module.
+A puppet module for [Apache Zookeeper](http://zookeeper.apache.org/) setup.
 
-License
--------
+## Basic Usage
 
+    node 'zk-1' {
+        include java
 
-Contact
--------
+        class { 'zookeeper':
+            myid => '1',
+            package_url => 'http://mirrors.ukfast.co.uk/sites/ftp.apache.org/zookeeper/zookeeper-3.4.5/zookeeper-3.4.5.tar.gz'
+        }
+    }
 
+## Parameters
 
-Support
--------
+   - `myid` - cluster-unique zookeeper's instance id (1-255)
+   - `package_url` - might use http, ftp, puppet or file scheme
+   - `servers` - array of zookeeper servers
 
-Please log tickets and issues at our [Projects site](http://projects.example.com)
