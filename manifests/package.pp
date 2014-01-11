@@ -11,7 +11,7 @@ class zookeeper::package($package_dir, $package_url) {
 
     file { $package_dir:
       ensure  => 'directory',
-      require => Exec['create_package_dir'],
+      require => Exec['create-zk-packagedir'],
     }
 
     $filenameArray = split($package_url, '/')
